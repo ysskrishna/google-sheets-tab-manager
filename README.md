@@ -10,5 +10,12 @@ A Google Sheets Add-on for bulk managing tabs.
 - **Sort tabs** - reorder tabs A-Z or Z-A
 - **Tab search/filter** - search bar to find tabs
 
+## Links
+- **Home**: https://ysskrishna.github.io/google-sheets-tab-manager/
+- **Terms of Service**: https://ysskrishna.github.io/google-sheets-tab-manager/terms.html
+- **Privacy Policy**: https://ysskrishna.github.io/google-sheets-tab-manager/privacy.html
+- **Support**: https://ysskrishna.github.io/google-sheets-tab-manager/support.html
+
+---
 
 Built and maintained by [Y. Siva Sai Krishna](https://github.com/ysskrishna).
