@@ -10,8 +10,9 @@ The same content is shown on the [Changelog page](https://ysskrishna.github.io/g
 
 - Initial release of the add-on.
 - **Bulk delete tabs** - multi-select and delete with confirmation
-- **Bulk hide/unhide tabs** - hide or reveal multiple tabs at once
-- **Bulk rename tabs** - find/replace, pattern-based, or prefix/suffix renaming
+- **Bulk hide tabs** - hide selected tabs from the tab bar
+- **Bulk unhide tabs** - unhide the selected hidden tabs from the tab bar
+- **Bulk rename tabs** - rename one tab, or find/replace across several selected tab names
 - **Bulk color tabs** - apply tab color to multiple tabs
 - **Sort tabs** - reorder tabs A-Z or Z-A
 - **Tab search/filter** - search bar to find tabs
