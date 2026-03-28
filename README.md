@@ -18,6 +18,8 @@ A Google Sheets Add-on for bulk managing tabs.
 - **Privacy Policy**: https://ysskrishna.github.io/google-sheets-tab-manager/privacy.html
 - **Support**: https://ysskrishna.github.io/google-sheets-tab-manager/support.html
 
----
+## Author
 
-Built and maintained by [Y. Siva Sai Krishna](https://github.com/ysskrishna).
+Built and maintained by **Y. Siva Sai Krishna**.
+
+[Author's GitHub](https://github.com/ysskrishna) • [Author's LinkedIn](https://www.linkedin.com/in/ysskrishna)
