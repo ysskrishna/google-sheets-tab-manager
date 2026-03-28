@@ -1,4 +1,4 @@
-# Google Sheets Tab Manager - Workspace Add-on
+# Google Sheets Tab Manager
 
 A Google Sheets Add-on for bulk managing tabs.
 
