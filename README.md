@@ -1,6 +1,6 @@
 # Google Sheets Tab Manager - Workspace Add-on
 
-A Google Workspace Add-on for bulk managing Google Sheets tabs using the official Sheets API.
+A Google Sheets Add-on for bulk managing tabs.
 
 ## Features
 - **Bulk delete tabs** - multi-select and delete with confirmation
