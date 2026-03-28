@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Changelog — Google Sheets Tab Manager</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
+    a { color: #0b57d0; }
+    .meta { color: #444; font-size: 0.95rem; }
+    .loading { color: #666; }
+    .err { color: #b3261e; }
+    #changelog-content { margin-top: 1.25rem; }
+    #changelog-content h1 { font-size: 1.75rem; margin: 0 0 0.75rem; }
+    #changelog-content h2 { font-size: 1.25rem; margin: 1.75rem 0 0.5rem; border-bottom: 1px solid #e0e0e0; padding-bottom: 0.25rem; }
+    #changelog-content h3 { font-size: 1rem; margin: 1.25rem 0 0.5rem; text-transform: uppercase; letter-spacing: 0.03em; color: #444; }
+    #changelog-content ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+    #changelog-content li { margin: 0.35rem 0; }
+    #changelog-content p { margin: 0.5rem 0; }
+    #changelog-content code { font-size: 0.9em; background: #f3f3f3; padding: 0.1em 0.35em; border-radius: 4px; }
+    #changelog-content a { word-break: break-word; }
+  </style>
+</head>
+<body>
+  <p><a href="index.html">Home</a></p>
+  <div id="changelog-content"><p class="loading">Loading changelog…</p></div>
+
+  <script type="module">
+    const OWNER = 'ysskrishna';
+    const REPO = 'google-sheets-tab-manager';
+    const BRANCH = 'main';
+    const mdUrl = 'https://cdn.jsdelivr.net/gh/' + OWNER + '/' + REPO + '@' + BRANCH + '/CHANGELOG.md';
+    const githubBlob = 'https://github.com/' + OWNER + '/' + REPO + '/blob/' + BRANCH + '/CHANGELOG.md';
+
+    const gh = document.getElementById('changelog-github');
+    if (gh) gh.href = githubBlob;
+
+    const el = document.getElementById('changelog-content');
+    try {
+      const { marked } = await import('https://cdn.jsdelivr.net/npm/marked@12.0.2/+esm');
+      const res = await fetch(mdUrl);
+      if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
+      const text = await res.text();
+      el.innerHTML = marked.parse(text);
+    } catch (e) {
+      el.innerHTML =
+        '<p class="err">Could not load the changelog from the CDN.</p>' +
+        '<p><a href="' + githubBlob + '">View <code>CHANGELOG.md</code> on GitHub</a></p>';
+    }
+  </script>
+</body>
+</html>

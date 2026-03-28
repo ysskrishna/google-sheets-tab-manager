@@ -12,6 +12,7 @@ A Google Sheets Add-on for bulk managing tabs.
 
 ## Links
 - **Home**: https://ysskrishna.github.io/google-sheets-tab-manager/
+- **Changelog**: https://ysskrishna.github.io/google-sheets-tab-manager/changelog.html
 - **Terms of Service**: https://ysskrishna.github.io/google-sheets-tab-manager/terms.html
 - **Privacy Policy**: https://ysskrishna.github.io/google-sheets-tab-manager/privacy.html
 - **Support**: https://ysskrishna.github.io/google-sheets-tab-manager/support.html
