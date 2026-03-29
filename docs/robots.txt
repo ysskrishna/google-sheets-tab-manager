@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ysskrishna.github.io/google-sheets-tab-manager/sitemap.xml
