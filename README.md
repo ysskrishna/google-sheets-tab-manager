@@ -1,6 +1,6 @@
 # Google Sheets Tab Manager
 
-A Google Sheets Add-on for bulk managing tabs.
+Google Sheets add-on for managing multiple tabs at once - delete, hide, rename, color, and sort with ease
 
 ## Features
 - **Bulk delete tabs** - multi-select and delete with confirmation
