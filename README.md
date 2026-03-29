@@ -18,6 +18,20 @@ A Google Sheets Add-on for bulk managing tabs.
 - **Privacy Policy**: https://ysskrishna.github.io/google-sheets-tab-manager/privacy.html
 - **Support**: https://ysskrishna.github.io/google-sheets-tab-manager/support.html
 
+## Screenshots
+
+<img src="docs/assets/store_screenshots/main.png" alt="Google Sheets Tab Manager main view" width="640" />
+
+<img src="docs/assets/store_screenshots/1.png" alt="Google Sheets Tab Manager screenshot 1" width="280" />
+
+<img src="docs/assets/store_screenshots/2.png" alt="Google Sheets Tab Manager screenshot 2" width="280" />
+
+<img src="docs/assets/store_screenshots/3.png" alt="Google Sheets Tab Manager screenshot 3" width="280" />
+
+<img src="docs/assets/store_screenshots/4.png" alt="Google Sheets Tab Manager screenshot 4" width="280" />
+
+<img src="docs/assets/store_screenshots/5.png" alt="Google Sheets Tab Manager screenshot 5" width="280" />
+
 ## Author
 
 Built and maintained by **Y. Siva Sai Krishna**.
