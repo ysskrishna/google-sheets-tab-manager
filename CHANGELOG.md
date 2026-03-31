@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to **Google Sheets Tab Manager** are documented in this file.
+All notable changes to **Sheets Tab Manager** are documented in this file.
 
 The same content is shown on the [Changelog page](https://ysskrishna.github.io/google-sheets-tab-manager/changelog.html) (GitHub Pages), loaded from this file in the default branch.
 
