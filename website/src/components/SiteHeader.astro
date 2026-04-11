@@ -8,8 +8,7 @@ interface Props {
 
 const { navKey } = Astro.props;
 
-const items: { key: NavKey; label: string; href: string }[] = [
-  { key: 'home', label: 'Home', href: siteBasePath },
+const items: { key: Exclude<NavKey, 'home'>; label: string; href: string }[] = [
   { key: 'changelog', label: 'Changelog', href: `${siteBasePath}changelog.html` },
   { key: 'support', label: 'Support', href: `${siteBasePath}support.html` },
   { key: 'terms', label: 'Terms', href: `${siteBasePath}terms.html` },
@@ -17,11 +16,13 @@ const items: { key: NavKey; label: string; href: string }[] = [
 ];
 
 const githubRepoUrl = 'https://github.com/ysskrishna/google-sheets-tab-manager';
+const googleMarketplaceUrl =
+  'https://workspace.google.com/marketplace/app/sheets_tab_manager/430663965462';
 ---
 
 <header class="site-header" id="site-header">
   <div class="site-header__inner">
-    <a class="brand" href={siteBasePath}>
+    <a class="brand" href={siteBasePath} aria-current={navKey === 'home' ? 'page' : undefined}>
       <img src={`${siteBasePath}assets/logos/icon48.png`} alt="" width="48" height="48" />
       <span>Sheets Tab Manager</span>
     </a>
@@ -46,15 +47,26 @@ const githubRepoUrl = 'https://github.com/ysskrishna/google-sheets-tab-manager';
           </a>
         ))
       }
-      <a
-        class="site-nav__github"
-        href={githubRepoUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <span>View on GitHub</span>
-        <span class="site-nav__github-arrow" aria-hidden="true">→</span>
-      </a>
+      <div class="site-nav__ctas">
+        <a
+          class="site-nav__github"
+          href={githubRepoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>Github</span>
+          <span class="site-nav__github-arrow" aria-hidden="true">→</span>
+        </a>
+        <a
+          class="site-nav__github"
+          href={googleMarketplaceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>Google Marketplace</span>
+          <span class="site-nav__github-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
     </nav>
   </div>
 </header>
