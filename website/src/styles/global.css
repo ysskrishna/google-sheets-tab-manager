@@ -8,7 +8,6 @@
   --link-hover: #0842a0;
   --header-h: 3.5rem;
   --max-wide: 56rem;
-  --max-narrow: 40rem;
   --radius: 8px;
 }
 
@@ -66,7 +65,7 @@ a:hover {
 }
 
 .site-header__inner {
-  max-width: var(--header-max, var(--max-wide));
+  max-width: var(--max-wide);
   margin: 0 auto;
   padding: 0 1rem;
   min-height: var(--header-h);
@@ -75,10 +74,6 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem 1rem;
-}
-
-body[data-layout="narrow"] {
-  --header-max: calc(var(--max-narrow) + 2rem);
 }
 
 .brand {
@@ -125,14 +120,10 @@ body[data-layout="narrow"] {
 
 .site-main {
   flex: 1;
-  max-width: var(--main-max, var(--max-wide));
+  max-width: var(--max-wide);
   width: 100%;
   margin: 0 auto;
   padding: 1.75rem 1rem 2.5rem;
-}
-
-body[data-layout="narrow"] .site-main {
-  --main-max: var(--max-narrow);
 }
 
 .hero {
@@ -217,15 +208,11 @@ ul {
 }
 
 .site-footer__inner {
-  max-width: var(--footer-max, var(--max-wide));
+  max-width: var(--max-wide);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-}
-
-body[data-layout="narrow"] .site-footer__inner {
-  --footer-max: calc(var(--max-narrow) + 2rem);
 }
 
 .site-footer__brand strong {

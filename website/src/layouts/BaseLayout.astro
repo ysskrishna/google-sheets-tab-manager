@@ -10,7 +10,6 @@ interface Props {
   description: string;
   canonical: string;
   navKey: NavKey;
-  layout?: 'wide' | 'narrow';
   mainClass?: string;
   ogTitle?: string;
   ogDescription?: string;
@@ -27,7 +26,6 @@ const {
   description,
   canonical,
   navKey,
-  layout = 'wide',
   mainClass = '',
   ogTitle = title,
   ogDescription = description,
@@ -77,7 +75,7 @@ const ldString = ldJson ? JSON.stringify(ldJson) : null;
 
     <slot name="head" />
   </head>
-  <body data-layout={layout}>
+  <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <SiteHeader navKey={navKey} />
     <main id="main" class:list={['site-main', mainClass]}>
