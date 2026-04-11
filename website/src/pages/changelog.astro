@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { marked } from 'marked';
+
+const site = 'https://ysskrishna.github.io/google-sheets-tab-manager';
+const pageUrl = `${site}/changelog.html`;
+
+const ldJson = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${site}/#website`,
+      name: 'Sheets Tab Manager',
+      url: `${site}/`,
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${pageUrl}#webpage`,
+      name: 'Changelog — Sheets Tab Manager',
+      description:
+        'Release history and what’s new in Sheets Tab Manager, synced from the project changelog on GitHub.',
+      url: pageUrl,
+      isPartOf: { '@id': `${site}/#website` },
+      inLanguage: 'en',
+    },
+  ],
+};
+
+const mdUrl =
+  'https://cdn.jsdelivr.net/gh/ysskrishna/google-sheets-tab-manager@main/CHANGELOG.md';
+const githubBlob =
+  'https://github.com/ysskrishna/google-sheets-tab-manager/blob/main/CHANGELOG.md';
+
+let changelogHtml = '';
+let loadError = false;
+
+try {
+  const res = await fetch(mdUrl);
+  if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+  changelogHtml = marked.parse(await res.text()) as string;
+} catch {
+  loadError = true;
+}
+---
+
+<BaseLayout
+  title="Changelog — Sheets Tab Manager"
+  description="Release history and what’s new in Sheets Tab Manager, synced from the project changelog on GitHub."
+  canonical={pageUrl}
+  navKey="changelog"
+  mainClass="site-main--inner"
+  ogTitle="Changelog — Sheets Tab Manager"
+  ogDescription="Release notes and what’s new for the Sheets Tab Manager add-on."
+  ogUrl={pageUrl}
+  twitterCard="summary"
+  ldJson={ldJson}
+>
+  {
+    loadError ? (
+      <>
+        <h1 class="page-title">Changelog</h1>
+        <div class="changelog-body">
+          <p class="changelog-fallback">Could not load the changelog from the CDN at build time.</p>
+          <p>
+            <a href={githubBlob}>
+              View <code>CHANGELOG.md</code> on GitHub
+            </a>
+          </p>
+        </div>
+      </>
+    ) : (
+      <div class="changelog-body" set:html={changelogHtml} />
+    )
+  }
+</BaseLayout>
