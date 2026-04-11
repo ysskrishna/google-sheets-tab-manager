@@ -15,6 +15,8 @@ const items: { key: NavKey; label: string; href: string }[] = [
   { key: 'terms', label: 'Terms', href: `${siteBasePath}terms.html` },
   { key: 'privacy', label: 'Privacy', href: `${siteBasePath}privacy.html` },
 ];
+
+const githubRepoUrl = 'https://github.com/ysskrishna/google-sheets-tab-manager';
 ---
 
 <header class="site-header" id="site-header">
@@ -44,6 +46,15 @@ const items: { key: NavKey; label: string; href: string }[] = [
           </a>
         ))
       }
+      <a
+        class="site-nav__github"
+        href={githubRepoUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span>View on GitHub</span>
+        <span class="site-nav__github-arrow" aria-hidden="true">→</span>
+      </a>
     </nav>
   </div>
 </header>
