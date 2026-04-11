@@ -27,22 +27,8 @@ const socialLinks = [
 
 <footer class="site-footer">
   <div class="site-footer__inner">
-    <div class="site-footer__grid">
-      <div class="site-footer__col site-footer__col--category">
-        <h3 class="site-footer__heading">Explore by Category</h3>
-        <ul class="site-footer__list">
-          {
-            categoryLinks.map(({ label, href }) => (
-              <li>
-                <a class="site-footer__cat-link" href={href} target="_blank" rel="noopener noreferrer">
-                  {label}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-      <div class="site-footer__col site-footer__col--meta">
+    <div class="site-footer__top">
+      <div class="site-footer__meta">
         <p class="site-footer__made">
           Made with
           <svg class="site-footer__heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
@@ -56,7 +42,8 @@ const socialLinks = [
         <div class="site-footer__icons">
           {
             socialLinks.map(({ label, href, icon }) => (
-              <a class="site-footer__icon-link"
+              <a
+                class="site-footer__icon-link"
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -68,6 +55,20 @@ const socialLinks = [
           }
         </div>
         <p class="site-footer__copyright">© 2026 ysskrishna. All rights reserved.</p>
+      </div>
+      <div class="site-footer__categories">
+        <h3 class="site-footer__heading">Explore more projects</h3>
+        <ul class="site-footer__list">
+          {
+            categoryLinks.map(({ label, href }) => (
+              <li>
+                <a class="site-footer__cat-link" href={href} target="_blank" rel="noopener noreferrer">
+                  {label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
       </div>
     </div>
   </div>
