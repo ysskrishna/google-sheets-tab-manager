@@ -1,5 +1,7 @@
 # Sheets Tab Manager
 
+[![Install on Google Workspace](https://img.shields.io/badge/Install-Google%20Workspace-4285F4?style=flat-square&logo=google)](https://workspace.google.com/marketplace/app/sheets_tab_manager/430663965462) [![Website](https://img.shields.io/badge/Website-222?style=flat-square&logo=githubpages)](https://ysskrishna.github.io/google-sheets-tab-manager/)
+
 Google Sheets add-on for managing multiple tabs at once - delete, hide, rename, color, and sort with ease
 
 ## Features
@@ -10,13 +12,6 @@ Google Sheets add-on for managing multiple tabs at once - delete, hide, rename, 
 - **Bulk color tabs** - apply tab color to multiple tabs
 - **Sort tabs** - reorder tabs A-Z or Z-A
 - **Tab search/filter** - search bar to find tabs
-
-## Links
-- **Home**: https://ysskrishna.github.io/google-sheets-tab-manager/
-- **Changelog**: https://ysskrishna.github.io/google-sheets-tab-manager/changelog.html
-- **Terms of Service**: https://ysskrishna.github.io/google-sheets-tab-manager/terms.html
-- **Privacy Policy**: https://ysskrishna.github.io/google-sheets-tab-manager/privacy.html
-- **Support**: https://ysskrishna.github.io/google-sheets-tab-manager/support.html
 
 ## Screenshots
 
@@ -36,4 +31,4 @@ Google Sheets add-on for managing multiple tabs at once - delete, hide, rename, 
 
 Built and maintained by **Y. Siva Sai Krishna**.
 
-[Author's GitHub](https://github.com/ysskrishna) • [Author's LinkedIn](https://www.linkedin.com/in/ysskrishna)
+[Author's GitHub](https://github.com/ysskrishna) • [Author's LinkedIn](https://www.linkedin.com/in/ysskrishna) • [Google Workspace Marketplace](https://workspace.google.com/marketplace/app/sheets_tab_manager/430663965462) • [Website](https://ysskrishna.github.io/google-sheets-tab-manager/)
