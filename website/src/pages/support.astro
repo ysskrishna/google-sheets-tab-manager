@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteBasePath } from '../paths';
+
+const site = 'https://ysskrishna.github.io/google-sheets-tab-manager';
+const pageUrl = `${site}/support.html`;
+
+const ldJson = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${site}/#website`,
+      name: 'Sheets Tab Manager',
+      url: `${site}/`,
+    },
+    {
+      '@type': 'ContactPage',
+      '@id': `${pageUrl}#webpage`,
+      name: 'Support — Sheets Tab Manager',
+      description:
+        'Get help with Sheets Tab Manager: email support, GitHub issues, response times, and tips for reporting problems.',
+      url: pageUrl,
+      isPartOf: { '@id': `${site}/#website` },
+      inLanguage: 'en',
+    },
+    {
+      '@type': 'Organization',
+      name: 'Sheets Tab Manager',
+      url: `${site}/`,
+      contactPoint: [
+        {
+          '@type': 'ContactPoint',
+          contactType: 'customer support',
+          email: 'sivasaikrishnassk@gmail.com',
+          url: 'https://github.com/ysskrishna/google-sheets-tab-manager/issues',
+        },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Support — Sheets Tab Manager"
+  description="Get help with Sheets Tab Manager: email support, GitHub issues, response times, and tips for reporting problems."
+  canonical={pageUrl}
+  navKey="support"
+  layout="narrow"
+  mainClass="site-main--inner"
+  ogTitle="Support — Sheets Tab Manager"
+  ogDescription="Support channels and reporting guidelines for the Sheets Tab Manager add-on."
+  ogUrl={pageUrl}
+  twitterCard="summary"
+  ldJson={ldJson}
+>
+  <h1 class="page-title">Support</h1>
+  <p class="page-intro">Get help with Sheets Tab Manager using the channels below.</p>
+
+  <section class="contact-card" aria-labelledby="support-contact-heading">
+    <h2 id="support-contact-heading">Contact</h2>
+    <ul>
+      <li>Email: <a href="mailto:sivasaikrishnassk@gmail.com">sivasaikrishnassk@gmail.com</a></li>
+      <li>
+        GitHub Issues: <a href="https://github.com/ysskrishna/google-sheets-tab-manager/issues">Report on GitHub</a>
+      </li>
+    </ul>
+  </section>
+
+  <h2>Response time</h2>
+  <p>
+    Support is provided by the developer on a best-effort basis. Responses are typically within 3 to 5 business days,
+    but response times and issue resolution are not guaranteed.
+  </p>
+
+  <h2>When reporting an issue</h2>
+  <ul>
+    <li>Describe what you expected to happen and what happened instead.</li>
+    <li>Include steps to reproduce the issue.</li>
+    <li>Share relevant screenshots or error messages.</li>
+    <li>Do not include sensitive spreadsheet data in public issue reports.</li>
+  </ul>
+  <p>For potential security vulnerabilities, report by email instead of posting public issue details.</p>
+
+  <h2>Related pages</h2>
+  <ul>
+    <li><a href={`${siteBasePath}terms.html`}>Terms of Service</a></li>
+    <li><a href={`${siteBasePath}privacy.html`}>Privacy Policy</a></li>
+  </ul>
+
+  <h2>No affiliation</h2>
+  <p>This add-on is an independent project and is not affiliated with, endorsed by, or sponsored by Google LLC.</p>
+</BaseLayout>

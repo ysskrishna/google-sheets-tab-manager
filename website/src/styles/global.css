@@ -1,0 +1,335 @@
+:root {
+  --bg: #f5f7fa;
+  --surface: #fff;
+  --text: #1f1f1f;
+  --text-muted: #5f6368;
+  --border: #e8eaed;
+  --link: #0b57d0;
+  --link-hover: #0842a0;
+  --header-h: 3.5rem;
+  --max-wide: 56rem;
+  --max-narrow: 40rem;
+  --radius: 8px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background: var(--surface);
+  color: var(--link);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.skip-link:focus {
+  left: 0.75rem;
+  top: 0.75rem;
+}
+
+a {
+  color: var(--link);
+  text-underline-offset: 2px;
+}
+a:hover {
+  color: var(--link-hover);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.site-header__inner {
+  max-width: var(--header-max, var(--max-wide));
+  margin: 0 auto;
+  padding: 0 1rem;
+  min-height: var(--header-h);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+}
+
+body[data-layout="narrow"] {
+  --header-max: calc(var(--max-narrow) + 2rem);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text);
+  text-decoration: none;
+}
+.brand:hover {
+  color: var(--text);
+}
+.brand img {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.5rem;
+}
+
+.site-nav a {
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.site-nav a:hover {
+  color: var(--link);
+  background: rgba(11, 87, 208, 0.06);
+}
+.site-nav a[aria-current="page"] {
+  color: var(--link);
+  font-weight: 600;
+  background: rgba(11, 87, 208, 0.08);
+}
+
+.site-main {
+  flex: 1;
+  max-width: var(--main-max, var(--max-wide));
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.75rem 1rem 2.5rem;
+}
+
+body[data-layout="narrow"] .site-main {
+  --main-max: var(--max-narrow);
+}
+
+.hero {
+  margin-bottom: 2rem;
+}
+.hero h1 {
+  font-size: clamp(1.65rem, 4vw, 2rem);
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
+}
+.hero .lede {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 42em;
+}
+
+.site-main h2 {
+  font-size: 1.15rem;
+  margin: 1.75rem 0 0.5rem;
+}
+.site-main--home h2:first-of-type {
+  margin-top: 0;
+}
+
+ul {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0 0;
+}
+
+.screenshots {
+  margin-top: 2rem;
+}
+.screenshots h2 {
+  font-size: 1.15rem;
+  margin: 0 0 0.5rem;
+}
+.screenshots-scroll {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0 0.75rem;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+}
+.screenshots-scroll figure {
+  flex: 0 0 auto;
+  margin: 0;
+  width: auto;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.screenshots-scroll img {
+  height: 16rem;
+  width: auto;
+  max-width: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: block;
+}
+.screenshots-scroll figcaption {
+  margin-top: 0.35rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.site-footer {
+  margin-top: auto;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 1rem 2rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.site-footer__inner {
+  max-width: var(--footer-max, var(--max-wide));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+body[data-layout="narrow"] .site-footer__inner {
+  --footer-max: calc(var(--max-narrow) + 2rem);
+}
+
+.site-footer__brand strong {
+  display: block;
+  color: var(--text);
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+}
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+.social a {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Inner pages (support, terms, privacy, changelog) */
+.page-title {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.5rem, 3.5vw, 1.85rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.page-intro {
+  margin: 0 0 1.5rem;
+  color: var(--text-muted);
+  font-size: 1.02rem;
+}
+
+.site-main--inner h2 {
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.site-main--inner p {
+  margin: 0.65rem 0 0;
+}
+
+.contact-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+  margin: 1.25rem 0 0;
+}
+.contact-card ul {
+  margin: 0.35rem 0 0;
+}
+.contact-card li {
+  margin-bottom: 0.35rem;
+}
+.contact-card li:last-child {
+  margin-bottom: 0;
+}
+.site-main--inner .contact-card h2 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+}
+
+/* Changelog rendered from Markdown */
+.changelog-body {
+  margin-top: 0.5rem;
+}
+.changelog-body h1 {
+  font-size: 1.75rem;
+  margin: 0 0 0.75rem;
+}
+.changelog-body h2 {
+  font-size: 1.25rem;
+  margin: 1.75rem 0 0.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.25rem;
+}
+.changelog-body h3 {
+  font-size: 1rem;
+  margin: 1.25rem 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+}
+.changelog-body ul {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0;
+}
+.changelog-body li {
+  margin: 0.35rem 0;
+}
+.changelog-body p {
+  margin: 0.5rem 0;
+}
+.changelog-body code {
+  font-size: 0.9em;
+  background: #f3f3f3;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+.changelog-body a {
+  word-break: break-word;
+}
+
+.changelog-fallback {
+  color: #b3261e;
+}

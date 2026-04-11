@@ -15,17 +15,17 @@ Google Sheets add-on for managing multiple tabs at once - delete, hide, rename, 
 
 ## Screenshots
 
-<img src="docs/assets/store_screenshots/main.png" alt="Sheets Tab Manager main view" width="640" />
+<img src="website/public/assets/store_screenshots/main.png" alt="Sheets Tab Manager main view" width="640" />
 
-<img src="docs/assets/store_screenshots/1.png" alt="Sheets Tab Manager screenshot 1" width="280" />
+<img src="website/public/assets/store_screenshots/1.png" alt="Sheets Tab Manager screenshot 1" width="280" />
 
-<img src="docs/assets/store_screenshots/2.png" alt="Sheets Tab Manager screenshot 2" width="280" />
+<img src="website/public/assets/store_screenshots/2.png" alt="Sheets Tab Manager screenshot 2" width="280" />
 
-<img src="docs/assets/store_screenshots/3.png" alt="Sheets Tab Manager screenshot 3" width="280" />
+<img src="website/public/assets/store_screenshots/3.png" alt="Sheets Tab Manager screenshot 3" width="280" />
 
-<img src="docs/assets/store_screenshots/4.png" alt="Sheets Tab Manager screenshot 4" width="280" />
+<img src="website/public/assets/store_screenshots/4.png" alt="Sheets Tab Manager screenshot 4" width="280" />
 
-<img src="docs/assets/store_screenshots/5.png" alt="Sheets Tab Manager screenshot 5" width="280" />
+<img src="website/public/assets/store_screenshots/5.png" alt="Sheets Tab Manager screenshot 5" width="280" />
 
 ## Author
 

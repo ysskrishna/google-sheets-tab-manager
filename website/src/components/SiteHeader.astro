@@ -1,0 +1,36 @@
+---
+import type { NavKey } from '../nav';
+import { siteBasePath } from '../paths';
+
+interface Props {
+  navKey: NavKey;
+}
+
+const { navKey } = Astro.props;
+
+const items: { key: NavKey; label: string; href: string }[] = [
+  { key: 'home', label: 'Home', href: siteBasePath },
+  { key: 'support', label: 'Support', href: `${siteBasePath}support.html` },
+  { key: 'changelog', label: 'Changelog', href: `${siteBasePath}changelog.html` },
+  { key: 'terms', label: 'Terms', href: `${siteBasePath}terms.html` },
+  { key: 'privacy', label: 'Privacy', href: `${siteBasePath}privacy.html` },
+];
+---
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href={siteBasePath}>
+      <img src={`${siteBasePath}assets/logos/icon48.png`} alt="" width="48" height="48" />
+      <span>Sheets Tab Manager</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      {
+        items.map(({ key, label, href }) => (
+          <a href={href} aria-current={key === navKey ? 'page' : undefined}>
+            {label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>

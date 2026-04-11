@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteBasePath } from '../paths';
+
+const site = 'https://ysskrishna.github.io/google-sheets-tab-manager';
+const ogImage = `${site}/assets/store_screenshots/main.png`;
+
+const ldJson = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${site}/#website`,
+      name: 'Sheets Tab Manager',
+      url: `${site}/`,
+      description:
+        'Google Sheets add-on for managing multiple tabs at once: bulk delete, hide, rename, color, sort, and search sheet tabs.',
+      publisher: { '@id': `${site}/#author` },
+      inLanguage: 'en',
+    },
+    {
+      '@type': 'SoftwareApplication',
+      name: 'Sheets Tab Manager',
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web',
+      url: `${site}/`,
+      description:
+        'Google Sheets add-on for managing multiple tabs at once: bulk delete, hide, unhide, rename, color, sort, and search sheet tabs.',
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+      },
+      author: { '@id': `${site}/#author` },
+    },
+    {
+      '@type': 'Person',
+      '@id': `${site}/#author`,
+      name: 'Y. Siva Sai Krishna',
+      url: 'https://github.com/ysskrishna',
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Sheets Tab Manager"
+  description="Google Sheets add-on to manage multiple tabs at once: bulk delete, hide, unhide, rename, color, sort, and search sheet tabs."
+  canonical={`${site}/`}
+  navKey="home"
+  layout="wide"
+  mainClass="site-main--home"
+  ogTitle="Sheets Tab Manager"
+  ogDescription="Google Sheets add-on to manage multiple tabs at once: bulk delete, hide, rename, color, sort, and search with ease."
+  ogUrl={`${site}/`}
+  ogImage={ogImage}
+  twitterCard="summary_large_image"
+  twitterImage={ogImage}
+  ldJson={ldJson}
+>
+  <div class="hero">
+    <h1>Sheets Tab Manager</h1>
+    <p class="lede">
+      Google Sheets add-on for managing multiple tabs at once — delete, hide, rename, color, and sort with ease.
+    </p>
+  </div>
+
+  <h2>Features</h2>
+  <ul>
+    <li><strong>Bulk delete tabs</strong> — multi-select and delete with confirmation</li>
+    <li><strong>Bulk hide tabs</strong> — hide selected tabs from the tab bar</li>
+    <li><strong>Bulk unhide tabs</strong> — unhide the selected hidden tabs from the tab bar</li>
+    <li>
+      <strong>Bulk rename tabs</strong> — rename one tab, or find/replace across several selected tab names
+    </li>
+    <li><strong>Bulk color tabs</strong> — apply tab color to multiple tabs</li>
+    <li><strong>Sort tabs</strong> — reorder tabs A-Z or Z-A</li>
+    <li><strong>Tab search/filter</strong> — search bar to find tabs</li>
+  </ul>
+
+  <section class="screenshots" aria-label="Screenshots">
+    <h2>Screenshots</h2>
+    <div class="screenshots-scroll" tabindex="0" aria-label="Scroll to see all screenshots">
+      <figure>
+        <img
+          src={`${siteBasePath}assets/store_screenshots/main.png`}
+          alt="Sheets Tab Manager main view"
+          width="1920"
+          height="1080"
+          loading="lazy"
+        />
+        <figcaption>Main</figcaption>
+      </figure>
+      <figure>
+        <img
+          src={`${siteBasePath}assets/store_screenshots/1.png`}
+          alt="Sheets Tab Manager screenshot 1"
+          width="1080"
+          height="1920"
+          loading="lazy"
+        />
+        <figcaption>1</figcaption>
+      </figure>
+      <figure>
+        <img
+          src={`${siteBasePath}assets/store_screenshots/2.png`}
+          alt="Sheets Tab Manager screenshot 2"
+          width="1080"
+          height="1920"
+          loading="lazy"
+        />
+        <figcaption>2</figcaption>
+      </figure>
+      <figure>
+        <img
+          src={`${siteBasePath}assets/store_screenshots/3.png`}
+          alt="Sheets Tab Manager screenshot 3"
+          width="1080"
+          height="1920"
+          loading="lazy"
+        />
+        <figcaption>3</figcaption>
+      </figure>
+      <figure>
+        <img
+          src={`${siteBasePath}assets/store_screenshots/4.png`}
+          alt="Sheets Tab Manager screenshot 4"
+          width="1080"
+          height="1920"
+          loading="lazy"
+        />
+        <figcaption>4</figcaption>
+      </figure>
+      <figure>
+        <img
+          src={`${siteBasePath}assets/store_screenshots/5.png`}
+          alt="Sheets Tab Manager screenshot 5"
+          width="1080"
+          height="1920"
+          loading="lazy"
+        />
+        <figcaption>5</figcaption>
+      </figure>
+    </div>
+  </section>
+</BaseLayout>
