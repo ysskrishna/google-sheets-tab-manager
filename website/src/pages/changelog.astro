@@ -56,19 +56,19 @@ try {
   twitterCard="summary"
   ldJson={ldJson}
 >
-  <h1 class="page-title">Changelog</h1>
-  <p class="page-intro">Release notes from the project repository.</p>
-
   {
     loadError ? (
-      <div class="changelog-body">
-        <p class="changelog-fallback">Could not load the changelog from the CDN at build time.</p>
-        <p>
-          <a href={githubBlob}>
-            View <code>CHANGELOG.md</code> on GitHub
-          </a>
-        </p>
-      </div>
+      <>
+        <h1 class="page-title">Changelog</h1>
+        <div class="changelog-body">
+          <p class="changelog-fallback">Could not load the changelog from the CDN at build time.</p>
+          <p>
+            <a href={githubBlob}>
+              View <code>CHANGELOG.md</code> on GitHub
+            </a>
+          </p>
+        </div>
+      </>
     ) : (
       <div class="changelog-body" set:html={changelogHtml} />
     )
