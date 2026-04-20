@@ -1,5 +1,4 @@
 ---
-import SiteFooterIcon from './SiteFooterIcon.astro';
 import { siteBasePath } from '../paths';
 
 const portfolio = 'https://ysskrishna.vercel.app';
@@ -31,20 +30,31 @@ const socialLinks = [
   { label: 'PyPI', href: 'https://pypi.org/user/ysskrishna', icon: 'pypi' as const },
   { label: 'Product Hunt', href: 'https://www.producthunt.com/@ysskrishna', icon: 'producthunt' as const },
 ];
+
+/** One place for mask-image URLs (avoids repeating define:vars on every scoped node). */
+const footerIconMaskStyle = [
+  `--mask-globe: url('${siteBasePath}assets/icons/globe.svg')`,
+  `--mask-linkedin: url('${siteBasePath}assets/icons/linkedin.svg')`,
+  `--mask-github: url('${siteBasePath}assets/icons/github.svg')`,
+  `--mask-pypi: url('${siteBasePath}assets/icons/pypi.svg')`,
+  `--mask-producthunt: url('${siteBasePath}assets/icons/producthunt.svg')`,
+].join(';');
 ---
 
-<footer class="site-footer">
+<footer class="site-footer" style={footerIconMaskStyle}>
   <div class="site-footer__inner">
     <div class="site-footer__top">
       <div class="site-footer__meta">
         <p class="site-footer__made">
           Made with
-          <svg class="site-footer__heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
-            <path
-              fill="currentColor"
-              d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
-            />
-          </svg>
+          <img
+            class="site-footer__heart"
+            src={`${siteBasePath}assets/icons/heart.svg`}
+            alt=""
+            width="16"
+            height="16"
+            decoding="async"
+          />
           by ysskrishna
         </p>
         <div class="site-footer__icons">
@@ -57,7 +67,7 @@ const socialLinks = [
                 rel="noopener noreferrer"
                 aria-label={label}
               >
-                <SiteFooterIcon name={icon} />
+                <span class:list={['site-footer__icon-svg', `site-footer__icon-svg--${icon}`]} aria-hidden="true" />
               </a>
             ))
           }
@@ -95,3 +105,38 @@ const socialLinks = [
     </div>
   </div>
 </footer>
+
+<style>
+  .site-footer__icon-svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    display: block;
+    flex-shrink: 0;
+    background-color: currentColor;
+  }
+
+  .site-footer__icon-svg--globe {
+    -webkit-mask: var(--mask-globe) center / contain no-repeat;
+    mask: var(--mask-globe) center / contain no-repeat;
+  }
+
+  .site-footer__icon-svg--linkedin {
+    -webkit-mask: var(--mask-linkedin) center / contain no-repeat;
+    mask: var(--mask-linkedin) center / contain no-repeat;
+  }
+
+  .site-footer__icon-svg--github {
+    -webkit-mask: var(--mask-github) center / contain no-repeat;
+    mask: var(--mask-github) center / contain no-repeat;
+  }
+
+  .site-footer__icon-svg--pypi {
+    -webkit-mask: var(--mask-pypi) center / contain no-repeat;
+    mask: var(--mask-pypi) center / contain no-repeat;
+  }
+
+  .site-footer__icon-svg--producthunt {
+    -webkit-mask: var(--mask-producthunt) center / contain no-repeat;
+    mask: var(--mask-producthunt) center / contain no-repeat;
+  }
+</style>
