@@ -8,13 +8,6 @@ interface Props {
 
 const { navKey } = Astro.props;
 
-const items: { key: Exclude<NavKey, 'home'>; label: string; href: string }[] = [
-  { key: 'changelog', label: 'Changelog', href: `${siteBasePath}changelog.html` },
-  { key: 'support', label: 'Support', href: `${siteBasePath}support.html` },
-  { key: 'terms', label: 'Terms', href: `${siteBasePath}terms.html` },
-  { key: 'privacy', label: 'Privacy', href: `${siteBasePath}privacy.html` },
-];
-
 const githubRepoUrl = 'https://github.com/ysskrishna/google-sheets-tab-manager';
 const googleMarketplaceUrl =
   'https://workspace.google.com/marketplace/app/sheets_tab_manager/430663965462';
@@ -40,13 +33,6 @@ const googleMarketplaceUrl =
       </span>
     </button>
     <nav class="site-nav" id="site-nav-menu" aria-label="Main">
-      {
-        items.map(({ key, label, href }) => (
-          <a href={href} aria-current={key === navKey ? 'page' : undefined}>
-            {label}
-          </a>
-        ))
-      }
       <div class="site-nav__ctas">
         <a
           class="site-nav__github"
