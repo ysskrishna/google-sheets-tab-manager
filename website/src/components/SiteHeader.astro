@@ -8,16 +8,12 @@ interface Props {
 
 const { navKey } = Astro.props;
 
-const items: { key: Exclude<NavKey, 'home'>; label: string; href: string }[] = [
-  { key: 'changelog', label: 'Changelog', href: `${siteBasePath}changelog.html` },
-  { key: 'support', label: 'Support', href: `${siteBasePath}support.html` },
-  { key: 'terms', label: 'Terms', href: `${siteBasePath}terms.html` },
-  { key: 'privacy', label: 'Privacy', href: `${siteBasePath}privacy.html` },
-];
-
 const githubRepoUrl = 'https://github.com/ysskrishna/google-sheets-tab-manager';
 const googleMarketplaceUrl =
   'https://workspace.google.com/marketplace/app/sheets_tab_manager/430663965462';
+/** Other Google Workspace add-ons (author products catalog). */
+const workspaceAddOnsUrl =
+  'https://ysskrishna.vercel.app/products?category=google-workspace-add-ons';
 ---
 
 <header class="site-header" id="site-header">
@@ -40,31 +36,55 @@ const googleMarketplaceUrl =
       </span>
     </button>
     <nav class="site-nav" id="site-nav-menu" aria-label="Main">
-      {
-        items.map(({ key, label, href }) => (
-          <a href={href} aria-current={key === navKey ? 'page' : undefined}>
-            {label}
-          </a>
-        ))
-      }
       <div class="site-nav__ctas">
         <a
-          class="site-nav__github"
+          class="site-nav__cta site-nav__cta--github"
           href={githubRepoUrl}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span>Github</span>
-          <span class="site-nav__github-arrow" aria-hidden="true">→</span>
+          <img
+            class="site-nav__cta-icon site-nav__cta-icon--monochrome"
+            src={`${siteBasePath}assets/icons/github.svg`}
+            alt=""
+            width="17"
+            height="17"
+            decoding="async"
+          />
+          <span>GitHub</span>
         </a>
+        
         <a
-          class="site-nav__github"
+          class="site-nav__cta site-nav__cta--sheets"
           href={googleMarketplaceUrl}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span>Google Marketplace</span>
-          <span class="site-nav__github-arrow" aria-hidden="true">→</span>
+          <img
+            class="site-nav__cta-icon site-nav__cta-icon--monochrome"
+            src={`${siteBasePath}assets/icons/google-sheets.svg`}
+            alt=""
+            width="17"
+            height="17"
+            decoding="async"
+          />
+          <span>Add to Google Sheets</span>
+        </a>
+        <a
+          class="site-nav__cta site-nav__cta--addons"
+          href={workspaceAddOnsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="site-nav__cta-icon"
+            src={`${siteBasePath}assets/icons/google.svg`}
+            alt=""
+            width="17"
+            height="17"
+            decoding="async"
+          />
+          <span>Explore More add-ons</span>
         </a>
       </div>
     </nav>
