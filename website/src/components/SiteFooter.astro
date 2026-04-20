@@ -5,16 +5,16 @@ import { siteBasePath } from '../paths';
 const portfolio = 'https://ysskrishna.vercel.app';
 
 const exploreLinks = [
-  { label: 'Latest', href: `${portfolio}/products?latest=true` },
-  { label: 'Featured', href: `${portfolio}/products?featured=true` },
+  { label: 'Latest Projects', href: `${portfolio}/products?latest=true` },
   {
-    label: 'Python Libraries & CLI Tools',
-    href: `${portfolio}/products?category=python-libraries-and-cli-tools`,
+    label: 'Google Workspace Add-ons',
+    href: `${portfolio}/products?category=google-workspace-add-ons`,
   },
   {
-    label: 'AI Apps & Assistants',
-    href: `${portfolio}/products?category=ai-apps-and-assistants`,
+    label: 'GitHub Marketplace Actions',
+    href: `${portfolio}/products?category=github-marketplace-actions`,
   },
+  { label: 'PyPI packages', href: `${portfolio}/products?category=pypi-packages` },
 ] as const;
 
 const siteLinks = [
@@ -65,7 +65,7 @@ const socialLinks = [
         <p class="site-footer__copyright">© 2026 ysskrishna. All rights reserved.</p>
       </div>
       <div class="site-footer__explore">
-        <h3 class="site-footer__heading">Explore more projects</h3>
+        <h3 class="site-footer__heading">Explore</h3>
         <ul class="site-footer__list">
           {
             exploreLinks.map(({ label, href }) => (
