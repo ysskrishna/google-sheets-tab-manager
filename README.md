@@ -48,10 +48,6 @@ If you find this project helpful:
 - 🔀 Submit pull requests
 - 💝 [Sponsor on GitHub](https://github.com/sponsors/ysskrishna)
 
-## License
-
-TODO(siva): this repository has no LICENSE file yet, so the code is "all rights reserved" by default. Pick a license (the optional `0005-license.patch` adds MIT) and replace this line, e.g. with: MIT © [Y. Siva Sai Krishna](https://github.com/ysskrishna) — see [LICENSE](LICENSE) for details.
-
 ---
 
 <p align="left">
