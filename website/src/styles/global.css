@@ -408,6 +408,14 @@ ul {
   color: var(--link);
 }
 
+.how-to-sort {
+  margin-top: 2.75rem;
+}
+.how-to-sort h2 {
+  font-size: 1.15rem;
+  margin: 0 0 0.65rem;
+}
+
 .screenshots {
   margin-top: 2.75rem;
 }
